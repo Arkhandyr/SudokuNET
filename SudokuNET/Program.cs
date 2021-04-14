@@ -55,8 +55,7 @@ namespace SudokuNET
 
             int[,] sudokuMatriz = StringParaMatriz(sudokuStringOriginal);
 
-            //if (ValidarSudoku(sudoku))
-            if (VerificarBlocos(sudokuMatriz))
+            if (ValidarSudoku(sudokuMatriz))
             {
                 Console.WriteLine("SIM");
             }
@@ -64,6 +63,7 @@ namespace SudokuNET
             {
                 Console.WriteLine("NAO");
             }
+
             Console.ReadLine();
         }
 
@@ -101,6 +101,13 @@ namespace SudokuNET
             }
 
             return false;
+        }
+
+        private static bool ValidarSudoku(int[,] sudokuMatriz)
+        {
+            return VerificarBlocos(sudokuMatriz) 
+                && VerificarLinhas(sudokuMatriz) 
+                && VerificarColunas(sudokuMatriz);
         }
 
         #region Verificação de linhas
@@ -164,33 +171,27 @@ namespace SudokuNET
         #region Verificação de blocos
         private static int[] BlocoParaArray(int iB, int jB, int[,] sudokuMatriz)
         {
+            int tamanhoLinha = (iB * 3);
+            int tamanhoColuna = (jB * 3);
             int[] bloco = new int[9];
             int count = 0;
-            for (int i = 0; i < 9; i += 3)
+
+            for (int i = tamanhoLinha; i < tamanhoLinha + 3; i++)
             {
-                for (int j = 0; j < 9; j += 3)
+                for (int j = tamanhoColuna; j < tamanhoColuna + 3; j++)
                 {
-                    for (int ii = 0; ii < 3; ii++)
-                    {
-                        for (int jj = 0; jj < 3; jj++)
-                        {
-                            bloco[count] = sudokuMatriz[i, j];
-                            Console.Write(bloco[count]);
-                            count++;
-                        }
-                        count = 0;
-                    }
+                    bloco[count] = sudokuMatriz[i, j];
+                    count++;
                 }
             }
-            Console.WriteLine();
             return bloco;
         }
 
         private static bool VerificarBlocos(int[,] sudokuMatriz)
         {
-            for (int iB = 0; iB < 9; iB += 3)
+            for (int iB = 0; iB < 3; iB++)
             {
-                for (int jB = 0; jB < 9; jB += 3)
+                for (int jB = 0; jB < 3; jB++)
                 {
                     int[] bloco = BlocoParaArray(iB, jB, sudokuMatriz);
 
