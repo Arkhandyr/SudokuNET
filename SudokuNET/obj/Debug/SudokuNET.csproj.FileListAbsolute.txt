@@ -1,0 +1,7 @@
+C:\Users\Arkhandyr\source\repos\SudokuNET\SudokuNET\bin\Debug\SudokuNET.exe.config
+C:\Users\Arkhandyr\source\repos\SudokuNET\SudokuNET\bin\Debug\SudokuNET.exe
+C:\Users\Arkhandyr\source\repos\SudokuNET\SudokuNET\bin\Debug\SudokuNET.pdb
+C:\Users\Arkhandyr\source\repos\SudokuNET\SudokuNET\obj\Debug\SudokuNET.csprojAssemblyReference.cache
+C:\Users\Arkhandyr\source\repos\SudokuNET\SudokuNET\obj\Debug\SudokuNET.csproj.CoreCompileInputs.cache
+C:\Users\Arkhandyr\source\repos\SudokuNET\SudokuNET\obj\Debug\SudokuNET.exe
+C:\Users\Arkhandyr\source\repos\SudokuNET\SudokuNET\obj\Debug\SudokuNET.pdb
